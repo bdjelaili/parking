@@ -12,10 +12,23 @@ public class Parking {
     @Singular
     private final Map<CarType, ParkingType> parkingTypes;
 
+    /**
+     * @param carType   to add
+     * @param carId     to add
+     * @param startDate of enter car
+     * @return ok or false if their is no place
+     * @throws IllegalArgumentException if carType is wrong or the car is already exist
+     */
     public boolean tryAddCar(CarType carType, String carId, long startDate) {
         return getParkingTypeOrThrow(carType).addCar(carId, startDate);
     }
 
+    /**
+     * @param carType to add
+     * @param carId   to add
+     * @param endDate or leaving date
+     * @throws IllegalArgumentException if carType is wrong or the car is not added yet.
+     */
     public int leaveAndBill(CarType carType, String carId, long endDate) {
         return getParkingTypeOrThrow(carType).leaveAndBill(carId, endDate);
     }

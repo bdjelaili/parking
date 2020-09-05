@@ -47,3 +47,4 @@ long endDate = startDate + (3600 * 3);
 int price = parking.leaveAndBill(CarType.CAR_SEDAN, carId, endDate);
 
 ```
+For more detail you can see ParkingTest for all use cases.
